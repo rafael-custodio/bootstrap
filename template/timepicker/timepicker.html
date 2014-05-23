@@ -1,26 +1,26 @@
 <table>
 	<tbody>
 		<tr class="text-center">
-			<td><a ng-click="incrementHours()" class="btn btn-link"><span class="glyphicon glyphicon-chevron-up"></span></a></td>
+			<td><a data-ng-click="incrementHours()" class="btn btn-link"><span class="glyphicon glyphicon-chevron-up"></span></a></td>
 			<td>&nbsp;</td>
-			<td><a ng-click="incrementMinutes()" class="btn btn-link"><span class="glyphicon glyphicon-chevron-up"></span></a></td>
-			<td ng-show="showMeridian"></td>
+			<td><a data-ng-click="incrementMinutes()" class="btn btn-link"><span class="glyphicon glyphicon-chevron-up"></span></a></td>
+			<td data-ng-show="showMeridian"></td>
 		</tr>
 		<tr>
-			<td style="width:50px;" class="form-group" ng-class="{'has-error': invalidHours}">
-				<input type="text" ng-model="hours" ng-change="updateHours()" class="form-control text-center" ng-mousewheel="incrementHours()" ng-readonly="readonlyInput" maxlength="2">
+			<td style="width:50px;" class="form-group" data-ng-class="{'has-error': invalidHours}">
+				<input type="text" data-ng-model="hours" data-ng-change="updateHours()" class="form-control text-center" data-ng-mousewheel="incrementHours()" data-ng-readonly="readonlyInput" maxlength="2">
 			</td>
 			<td>:</td>
-			<td style="width:50px;" class="form-group" ng-class="{'has-error': invalidMinutes}">
-				<input type="text" ng-model="minutes" ng-change="updateMinutes()" class="form-control text-center" ng-readonly="readonlyInput" maxlength="2">
+			<td style="width:50px;" class="form-group" data-ng-class="{'has-error': invalidMinutes}">
+				<input type="text" data-ng-model="minutes" data-ng-change="updateMinutes()" class="form-control text-center" data-ng-readonly="readonlyInput" maxlength="2">
 			</td>
-			<td ng-show="showMeridian"><button type="button" class="btn btn-default text-center" ng-click="toggleMeridian()">{{meridian}}</button></td>
+			<td data-ng-show="showMeridian"><button type="button" class="btn btn-default text-center" data-ng-click="toggleMeridian()">{{meridian}}</button></td>
 		</tr>
 		<tr class="text-center">
-			<td><a ng-click="decrementHours()" class="btn btn-link"><span class="glyphicon glyphicon-chevron-down"></span></a></td>
+			<td><a data-ng-click="decrementHours()" class="btn btn-link"><span class="glyphicon glyphicon-chevron-down"></span></a></td>
 			<td>&nbsp;</td>
-			<td><a ng-click="decrementMinutes()" class="btn btn-link"><span class="glyphicon glyphicon-chevron-down"></span></a></td>
-			<td ng-show="showMeridian"></td>
+			<td><a data-ng-click="decrementMinutes()" class="btn btn-link"><span class="glyphicon glyphicon-chevron-down"></span></a></td>
+			<td data-ng-show="showMeridian"></td>
 		</tr>
 	</tbody>
 </table>

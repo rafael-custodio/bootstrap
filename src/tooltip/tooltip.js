@@ -97,11 +97,11 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
       var endSym = $interpolate.endSymbol();
       var template =
         '<div '+ directiveName +'-popup '+
-          'title="'+startSym+'tt_title'+endSym+'" '+
-          'content="'+startSym+'tt_content'+endSym+'" '+
-          'placement="'+startSym+'tt_placement'+endSym+'" '+
-          'animation="tt_animation" '+
-          'is-open="tt_isOpen"'+
+          'data-title="'+startSym+'tt_title'+endSym+'" '+
+          'data-content="'+startSym+'tt_content'+endSym+'" '+
+          'data-placement="'+startSym+'tt_placement'+endSym+'" '+
+          'data-animation="tt_animation" '+
+          'data-is-open="tt_isOpen"'+
           '>'+
         '</div>';
 
