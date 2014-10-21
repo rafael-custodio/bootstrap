@@ -31,7 +31,7 @@ describe('progressbar directive', function () {
 
   it('has the appropriate aria markup', function() {
     var bar = getBar(0);
-    expect(bar.attr('role')).toBe('progressbar');
+    expect(bar.attr('data-role')).toBe('progressbar');
     expect(bar.attr('aria-valuemin')).toBe('0');
     expect(bar.attr('aria-valuemax')).toBe('100');
     expect(bar.attr('aria-valuenow')).toBe('22');
