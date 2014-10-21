@@ -280,6 +280,23 @@ describe('$modal', function () {
         expect($document).toHaveModalOpenWithContent('Whitespaces', 'div');
       });
 
+      it('should accept template as a function', function () {
+        open({template: function() {
+          return '<div>From a function</div>';
+        }});
+
+        expect($document).toHaveModalOpenWithContent('From a function', 'div');
+      });
+
+      it('should not fail if a templateUrl as a function', function () {
+
+        $templateCache.put('whitespace.html', '  <div>Whitespaces</div>  ');
+        open({templateUrl: function(){
+          return 'whitespace.html';
+        }});
+        expect($document).toHaveModalOpenWithContent('Whitespaces', 'div');
+      });
+
     });
 
     describe('controller', function () {
@@ -311,6 +328,14 @@ describe('$modal', function () {
         });
 
         open({template: '<div>{{test.fromCtrl}} {{test.isModalInstance}}</div>', controller: 'TestCtrl', controllerAs: 'test'});
+        expect($document).toHaveModalOpenWithContent('Content from ctrl true', 'div');
+      });
+
+      it('should allow defining in-place controller-as controllers', function () {
+        open({template: '<div>{{test.fromCtrl}} {{test.isModalInstance}}</div>', controller: function($modalInstance) {
+          this.fromCtrl = 'Content from ctrl';
+          this.isModalInstance = angular.isObject($modalInstance) && angular.isFunction($modalInstance.close);
+        }, controllerAs: 'test'});
         expect($document).toHaveModalOpenWithContent('Content from ctrl true', 'div');
       });
     });

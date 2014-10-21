@@ -1,5 +1,5 @@
-<ul class="dropdown-menu" data-ng-if="isOpen()" data-ng-style="{top: position.top+'px', left: position.left+'px'}" style="display: block;" data-role="listbox" aria-hidden="{{!isOpen()}}">
-    <li data-ng-repeat="match in matches track by $index" data-ng-class="{active: isActive($index) }" data-ng-mouseenter="selectActive($index)" data-ng-click="selectMatch($index)" data-role="option" id="{{match.id}}" class="pointer">
+<ul class="dropdown-menu" data-ng-show="isOpen()" data-ng-style="{top: position.top+'px', left: position.left+'px'}" style="display: block;" role="listbox" aria-hidden="{{!isOpen()}}">
+    <li data-ng-repeat="match in matches track by $index" data-ng-class="{active: isActive($index) }" data-ng-mouseenter="selectActive($index)" data-ng-click="selectMatch($index)" role="option" id="{{match.id}}">
         <div data-typeahead-match data-index="$index" data-match="match" data-query="query" data-template-url="templateUrl"></div>
     </li>
 </ul>
